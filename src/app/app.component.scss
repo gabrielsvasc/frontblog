@@ -1,4 +1,104 @@
-main {
-  margin-left: 5rem;
-  padding: 1rem;
+.grid {
+  display: grid;
+  grid-auto-rows: 1fr;
+}
+
+.card {
+  align-items: flex-start;
+  border-radius: 8px;
+  padding: 0.5rem;
+  margin: 1rem;
+
+  .card-img {
+    width: 100%;
+    height: 15rem;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+  }
+
+  .card-category {
+    background-color: yellow;
+    text-align: center;
+    width: 4rem;
+    margin-bottom: 1rem;
+    border-right: 10px solid orchid;
+    border-radius: 4px;
+  }
+
+  .card-title {
+    margin-bottom: 1rem;
+  }
+
+  .card-text {
+    margin-bottom: 1rem;
+  }
+}
+
+.carousel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  button {
+    height: 2rem;
+  }
+  .news {
+    overflow: hidden;
+    display: flex;
+    transform: translateX(0);
+    width: 500px;
+    height: 500px;
+
+    .news-card {
+      text-align: center;
+      .news-img {
+        width: 10rem;
+        height: 10rem;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .grid {
+    margin-bottom: 5rem;
+    grid-template-columns: 1fr;
+  }
+  .card:last-child {
+    margin-bottom: 6rem;
+  }
+  .carousel {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 10rem;
+    padding-right: 5rem;
+  }
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .card:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    grid-row: span 1;
+    grid-column: span 2;
+
+    .card-img {
+      height: 500px;
+    }
+
+    .card-resume {
+      display: block;
+    }
+  }
 }
