@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -6,15 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
+  boolSearchOverlay = false;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  boolSearchArea = false;
-
-  OpenSearchArea() {
-    this.boolSearchArea = !this.boolSearchArea;
+  // Controla o estadp da tela de busca
+  ViewOverlay(open: boolean) {
+    this.boolSearchOverlay = open;
   }
 }
