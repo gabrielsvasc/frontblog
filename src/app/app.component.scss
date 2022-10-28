@@ -1,3 +1,9 @@
+$text-primary: #b6b6b6;
+$text-secondary: #ececec;
+$bg-primary: #23232e;
+$bg-secondary: #141418;
+$transition-speed: 600ms;
+
 .grid {
   display: grid;
   grid-auto-rows: 1fr;
@@ -35,32 +41,6 @@
   }
 }
 
-.carousel {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  button {
-    height: 2rem;
-  }
-  .news {
-    overflow: hidden;
-    display: flex;
-    transform: translateX(0);
-    width: 500px;
-    height: 500px;
-
-    .news-card {
-      text-align: center;
-      .news-img {
-        width: 10rem;
-        height: 10rem;
-        object-fit: cover;
-      }
-    }
-  }
-}
-
 @media only screen and (max-width: 992px) {
   .grid {
     margin-bottom: 5rem;
@@ -69,7 +49,7 @@
   .card:last-child {
     margin-bottom: 6rem;
   }
-  .carousel {
+  .categories-news {
     display: none;
   }
 }
@@ -100,5 +80,68 @@
     .card-resume {
       display: block;
     }
+  }
+
+  .categories-news {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -10rem;
+    padding: 3rem;
+  }
+
+  .news {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-row: span 1;
+    grid-column: span 1;
+    gap: 1rem;
+    padding: 3rem;
+
+    .news-card {
+      .news-card-img {
+        width: 100%;
+        height: 15rem;
+        border-radius: 5px;
+        object-fit: cover;
+      }
+      .news-card-text {
+        text-align: center;
+        color: black;
+      }
+    }
+
+    .news-card:not(:hover) {
+      opacity: 0.9;
+    }
+  }
+  .categorie {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 5rem;
+    list-style: none;
+    .categorie-item {
+      padding: 1rem;
+      text-decoration: none;
+      color: white;
+      background: $bg-primary;
+      border: none;
+    }
+    .categorie-item:hover {
+      background: linear-gradient(to top, #1474fc, $bg-primary);
+    }
+  }
+  .news {
+    animation: FadeIn 1s;
+  }
+}
+
+@keyframes FadeIn {
+  from {
+    opacity: 0.7;
+  }
+  to {
+    opacity: 1;
   }
 }

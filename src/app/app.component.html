@@ -37,5 +37,20 @@
         <p class="card-resume">Ator confirma entrada para o universo da Marvel</p>
     </div>
 
-  </section>  
+  </section>
+  
+  <section class="categories-news">
+    <div class="news">
+        <div class="news-card" *ngFor="let item of MAIN_CATEGORY">
+            <img src="{{ item.img }}" alt="" class="news-card-img">
+            <h4 class="news-card-text">{{ item.title }}</h4>
+        </div>
+    </div>
+    <ul class="categorie">
+        <li><button class="categorie-item" (click)="ChangeCategory('tech')">Tecnologia</button></li>
+        <li><button class="categorie-item" (click)="ChangeCategory('sports')">Esportes</button></li>
+        <li><button class="categorie-item" (click)="ChangeCategory('movies')">Filmes</button></li>
+        <li><button class="categorie-item" (click)="ChangeCategory('series')">Séries</button></li>
+    </ul>
+  </section>
 </main>
