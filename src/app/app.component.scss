@@ -7,6 +7,7 @@ $transition-speed: 600ms;
 .grid {
   display: grid;
   grid-auto-rows: 1fr;
+  animation: FadeIn 1s;
 }
 
 .card {
@@ -41,27 +42,78 @@ $transition-speed: 600ms;
   }
 }
 
+.recent-news {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+
+  p,
+  i {
+    font-size: 0.9rem;
+  }
+}
+.recent-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+  width: 100%;
+}
+
+.recent-card:last-child {
+  margin-bottom: 5rem;
+}
+
+.recent-img {
+  width: 25%;
+  height: 10rem;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.recent-content {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  width: 30%;
+}
+
+.recent-info {
+  display: flex;
+  justify-content: space-between;
+
+  .recent-category {
+    background-color: yellow;
+    text-align: center;
+    padding: 0.4rem;
+    border-right: 10px solid orchid;
+    border-radius: 4px;
+  }
+}
+
+.recent-text {
+  margin: 2rem 0;
+}
+
 @media only screen and (max-width: 992px) {
   .grid {
     margin-bottom: 5rem;
     grid-template-columns: 1fr;
   }
-  .card:last-child {
-    margin-bottom: 6rem;
-  }
   .categories-news {
+    display: none;
+  }
+  .recent-news {
     display: none;
   }
 }
 
 @media only screen and (min-width: 992px) {
   main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-left: 10rem;
-    padding-right: 5rem;
+    padding: 0 10rem;
   }
   .grid {
     grid-template-columns: 1fr 1fr 1fr;
@@ -81,15 +133,14 @@ $transition-speed: 600ms;
       display: block;
     }
   }
-
+  // Section Categories
   .categories-news {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     margin-top: -10rem;
-    padding: 3rem;
   }
-
   .news {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -101,7 +152,6 @@ $transition-speed: 600ms;
     .news-card {
       .news-card-img {
         width: 100%;
-        height: 15rem;
         border-radius: 5px;
         object-fit: cover;
       }
@@ -115,7 +165,7 @@ $transition-speed: 600ms;
       opacity: 0.9;
     }
   }
-  .categorie {
+  .category {
     display: flex;
     justify-content: center;
     width: 100%;
